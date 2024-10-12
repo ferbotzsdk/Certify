@@ -28,5 +28,4 @@ async function decodeJwtFlexible(token){
     })
 }
 
-module.exports.decodeJwt = {decodeJwt}
-module.exports.decodeJwtFlexible = {decodeJwtFlexible}
+module.exports = { decodeJwt, decodeJwtFlexible };
