@@ -32,7 +32,7 @@ async function validateAuth(bearer){
     const token = bearer && bearer.startsWith("Bearer ") ? bearer.slice(7) : bearer;
     if (token) {
         try {
-            await decodeJwt(token);
+            return await decodeJwt(token).userId;
         }catch (error){
             const e =  new Error(error.message)
             e.code = 401
