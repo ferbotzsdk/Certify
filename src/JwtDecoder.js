@@ -28,4 +28,21 @@ async function decodeJwtFlexible(token){
     })
 }
 
-module.exports = { decodeJwt, decodeJwtFlexible };
+async function validateAuth(bearer){
+    const token = bearer && bearer.startsWith("Bearer ") ? bearer.slice(7) : bearer;
+    if (token) {
+        try {
+            await decodeJwt(token);
+        }catch (error){
+            const e =  new Error(error.message)
+            e.code = 401
+            throw e;
+        }
+    }else {
+        const e =  new Error('No token provided.')
+        e.code = 400
+        throw e;
+    }
+}
+
+module.exports = { decodeJwt, decodeJwtFlexible, validateAuth };
