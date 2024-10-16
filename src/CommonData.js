@@ -6,7 +6,7 @@ const expiryTime = process.env.BUNDLE_JWT_EXPIRY || 2 * 60 * 60
 
 async function encodeData(data) {
     return new Promise((resolve, reject) => {
-        jwt.sign(data, bundlePrivateKey, { algorithm: 'RS256' , expiresIn: expiryTime }, function(error, token) {
+        jwt.sign(data, bundlePrivateKey, { algorithm: 'RS256' , expiresIn: parseInt(expiryTime) }, function(error, token) {
             if(error){
                 reject({message : error.message});
             }else {
