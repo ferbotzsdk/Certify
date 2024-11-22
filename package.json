@@ -1,14 +1,15 @@
 {
-  "name": "certify",
+  "name": "ferbotz-certify",
   "version": "1.0.0",
-  "description": "A micro service for validating bearer token",
+  "description": "A simple module for JWT decoding",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferbotzsdk/Certify.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Vishal B",
+  "license": "MIT",
+  "keywords": ["jwt", "decode", "auth"],
   "dependencies": {
     "dotenv": "^16.4.5",
     "jsonwebtoken": "^9.0.2"
