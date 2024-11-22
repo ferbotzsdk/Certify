@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
-const jwtPublicKey = process.env.JWT_PUBLIC_KEY.replace(/\\n/g, '\n');
+const jwtPublicKey = process.env.AUTH_JWT_PUBLIC_KEY.replace(/\\n/g, '\n');
 
 async function decodeJwt(token) {
     return new Promise((resolve, reject) => {

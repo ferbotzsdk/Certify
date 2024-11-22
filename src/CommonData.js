@@ -1,8 +1,8 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
-const bundlePrivateKey = process.env.BUNDLE_JWT_PRIVATE_KEY.replace(/\\n/g, '\n');
-const bundlePublicKey = process.env.BUNDLE_JWT_PUBLIC_KEY.replace(/\\n/g, '\n');
-const expiryTime = process.env.BUNDLE_JWT_EXPIRY || 2 * 60 * 60
+const bundlePrivateKey = process.env.AUTH_BUNDLE_JWT_PRIVATE_KEY.replace(/\\n/g, '\n');
+const bundlePublicKey = process.env.AUTH_BUNDLE_JWT_PUBLIC_KEY.replace(/\\n/g, '\n');
+const expiryTime = process.env.AUTH_BUNDLE_JWT_EXPIRY || 2 * 60 * 60
 
 async function encodeData(data) {
     return new Promise((resolve, reject) => {
