@@ -69,4 +69,4 @@ async function validateAuthWithRoles(bearer, grantedRoles){
     }
 }
 
-module.exports = { decodeJwt, decodeJwtFlexible, validateAuth };
+module.exports = { decodeJwt, decodeJwtFlexible, validateAuth , validateAuthWithRoles};
