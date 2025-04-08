@@ -59,7 +59,11 @@ async function validateAuthWithRoles(bearer, grantedRoles){
             }
         }catch (error){
             const e =  new Error(error.message)
-            e.code = 401
+            if (error.code){
+                e.code = error.code
+            }else {
+                e.code = 401
+            }
             throw e;
         }
     }else {
